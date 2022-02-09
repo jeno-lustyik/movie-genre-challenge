@@ -44,11 +44,20 @@ for page in pages:
             genre.append('_')
 
 
-        if (i.find('p', class_='text-muted')) is not None:
-            desc.append(i.find('p', class_='text-muted').text.replace('\n', ''))
+        # if (i.find('p', class_='text-muted')) is not None:
+        #     desc.append(i.find('p', class_='text-muted').text.replace('\n', ''))
 
-        else:
-            desc.append('_')
+        # else:
+        #     desc.append('_')
+
+
+
+df = pd.DataFrame({'Ratings' : ratings,
+                    'Duration': duration,
+                    'genre': genre})
+
+
+df.head()
 
 
         
@@ -57,7 +66,7 @@ for page in pages:
 #print(len(ratings))
 #print(len(duration))
 #print(len(genre))
-print(desc)
+#print(desc)
 
 
 
