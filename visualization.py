@@ -16,7 +16,9 @@ def norm_max_min():
     Rating_max_min[column] = (Rating_max_min[column] -  Rating_max_min[column].min())/ (Rating_max_min[column].max() - Rating_max_min[column].min())
     a = df3.assign(Rating_max_min = Rating_max_min[column])
     return a
-df4 = print(norm_max_min())
+df4 = norm_max_min()
+print(df4)
+
 
 
 #Rating_max_min = df.copy()
@@ -29,11 +31,12 @@ df4 = print(norm_max_min())
 # print(norm_max_min())
 
 
-# plt.bar(df4['rating'],df4['release'],width = 0.4, label = 'ratings per year')
-# plt.grid(True,linestyle = '--', color = 'dimgrey')
-# plt.ylabel('release year')
-# plt.xlabel('ratings')
-# plt.legend()
-# plt.show()
+plt.bar(df4['release'],df4['rating'],width = 0.4, label = 'ratings per year')
+plt.grid(True,linestyle = '--', color = 'dimgrey')
+plt.ylabel('release year')
+plt.xlabel('ratings')
+plt.legend()
+plt.show()
 
+#scattered
 df4.plot.scatter(x = 'release', y = 'rating', color = 'darkred', s = 25, figsize = (12,2))
